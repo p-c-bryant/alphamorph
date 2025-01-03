@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphamorph</title>
+</head>
+<body>
+    <div class="game-header">
+        <div class="word-pair" id="wordPair">COLD &rarr; HEAT</div>
+        <div class="tooltip">?
+            <div class="tooltip-text">Starting with the start word, enter words that differ by one letter from the previous word until you reach the target word. You may reorder letters, as long as only one letter is changed. Complete the puzzle in as few turns as possible.</div>
+        </div>
+    </div>
+
+    <div class="grid" id="gameGrid">
+        <div class="grid-row" id="userEntryRow">
+            <input class="grid-cell" maxlength="1">
+            <input class="grid-cell" maxlength="1">
+            <input class="grid-cell" maxlength="1">
+            <input class="grid-cell" maxlength="1">
+        </div>
+    </div>
+
+    <div id="keyboard-cont">
+        <div class="first-row">
+            <button class="keyboard-button">q</button>
+            <button class="keyboard-button">w</button>
+            <button class="keyboard-button">e</button>
+            <button class="keyboard-button">r</button>
+            <button class="keyboard-button">t</button>
+            <button class="keyboard-button">y</button>
+            <button class="keyboard-button">u</button>
+            <button class="keyboard-button">i</button>
+            <button class="keyboard-button">o</button>
+            <button class="keyboard-button">p</button>
+        </div>
+        <div class="second-row">
+            <button class="keyboard-button">a</button>
+            <button class="keyboard-button">s</button>
+            <button class="keyboard-button">d</button>
+            <button class="keyboard-button">f</button>
+            <button class="keyboard-button">g</button>
+            <button class="keyboard-button">h</button>
+            <button class="keyboard-button">j</button>
+            <button class="keyboard-button">k</button>
+            <button class="keyboard-button">l</button>
+        </div>
+        <div class="third-row">
+            <button class="keyboard-button">Del</button>
+            <button class="keyboard-button">z</button>
+            <button class="keyboard-button">x</button>
+            <button class="keyboard-button">c</button>
+            <button class="keyboard-button">v</button>
+            <button class="keyboard-button">b</button>
+            <button class="keyboard-button">n</button>
+            <button class="keyboard-button">m</button>
+            <button class="keyboard-button">Enter</button>
+        </div>
+    </div>
+
+    <div id="controls">
+        <button class="submit" id="submitBtn">Submit</button>
+        <button class="undo" id="undoBtn" disabled>Undo</button>
+        <button class="reset" id="resetBtn">Reset</button>
+    </div>
+
+    <div class="error-message" id="errorMessage"></div>
+
+    <div class="score" id="scoreBoard"></div>
+</body>
+<script type="text/javascript" src="gameplay.js"></script>
+</html>
