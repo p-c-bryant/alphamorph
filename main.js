@@ -153,6 +153,7 @@ function undoLastMove() {
         updateScore(false);
         if (attempts.length === 0) {
             undoBtn.disabled = true;
+            resetBtn.disabled = true;
         }
         const inputFields = document.querySelectorAll('input');
 
