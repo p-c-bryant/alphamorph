@@ -40,6 +40,8 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+    user-select: none;
+    pointer-events: none;
 }
 .grid-cell.correct {
     background-color: #6aaa64;
