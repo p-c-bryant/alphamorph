@@ -9,11 +9,7 @@
 <body>
     <div class="game-header">
         <div class="word-pair" id="wordPair">COLD &rarr; HEAT</div>
-        <div class="tooltip">?
-            <div class="tooltip-text">Starting with the start word, enter words that differ by one letter from the previous word until you reach the target word. You may reorder letters, as long as only one letter is changed. Complete the puzzle in as few turns as possible.</div>
-        </div>
     </div>
-
     <div class="grid" id="gameGrid">
         <div class="grid-row" id="userEntryRow">
             <input class="grid-cell" maxlength="1">
@@ -69,6 +65,31 @@
     <div class="error-message" id="errorMessage"></div>
 
     <div class="score" id="scoreBoard"></div>
+
+    <div class="rules">
+        <h2>Objective</h2>
+        <p>Transform the <strong>Start Word</strong> into the <strong>End Word</strong> by creating a sequence of valid intermediate words. Try to reach the End Word in as few moves as possible!</p>
+    
+        <h2>Gameplay Rules</h2>
+        <ul>
+            <li><strong>Change One Letter:</strong> On each turn, change exactly <em>one letter</em> in the current word to form a new valid word. <b>Example: "COLD → HOLD"</b> is valid, because only one letter has been changed between the two words (changing <b>C</b> to <b>H</b>).</li>
+            <li><strong>You May Reorder Letters:</strong> You may reorder the letters of the current word to form a new word, as long as you only change one letter. <b>Example: HALE → HEAT</b> is valid, because there is only one letter that is different between the two words (changing <b>"L"</b> to <b>"T"</b>), even though the letters are reordered.</li>
+            <li><strong>No Multiple Letter Changes:</strong> You can only change one letter per turn. If the word contains duplicates of letter, you can only change one instance of that letter in a single turn. <b>Example: COOL → CALL</b> is invalid, because both <b>"O"s</b> are changed at the same time. A valid alternative would be <b>COOL → COAL</b>, because only one <b>"O"</b> is changed.</li>
+        </ul>
+    </div>
+    <div class="example-box">
+        <p class="example-title">Example Gameplay:</p>
+        <p><strong>Start Word:</strong> <span class="sequence">COLD</span></p>
+        <p><strong>End Word:</strong> <span class="sequence">HEAT</span></p>
+        <p><strong>Valid Sequence:</strong></p>
+        <ol>
+            <li>COLD → HOLD (Change <b>C</b> to <b>H</b>)</li>
+            <li>HOLD → HOLE (Change <b>D</b> to <b>E</b>)</li>
+            <li>HOLE → HALE (Change <b>O</b> to <b>A</b>)</li>
+            <li>HALE → HEAT (Change <b>L</b> to <b>T</b> and <b>reorder</b>)</li>
+        </ol>
+        <p class="sequence">COLD → HOLD → HOLE → HALE → HEAT</p>
+      </div>
 </body>
 <script type="text/javascript" src="main.js"></script>
 </html>
