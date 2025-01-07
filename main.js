@@ -237,17 +237,17 @@ document.addEventListener("keyup", (e) => {
     }
 })
 
-function insertLetter (pressedKey) {
-    if (nextLetter === 5) {
-        return
-    }
-    pressedKey = pressedKey.toLowerCase()
+function insertLetter(pressedKey) {
+    if (nextLetter === 5) return;
 
-    let row = document.getElementById("userEntryRow")
-    let box = row.children[nextLetter]
-    box.value = pressedKey
-    box.classList.add("filled-box")
-    nextLetter += 1
+    pressedKey = pressedKey.toLowerCase();
+
+    const row = document.getElementById("userEntryRow");
+    const box = row.children[nextLetter];
+    box.value = pressedKey;
+    box.classList.add("filled-box");
+
+    nextLetter += 1;
 }
 
 function deleteLetter () {
@@ -274,18 +274,17 @@ submitBtn.addEventListener("click", ()=> {
 });
 
 document.getElementById("keyboard-cont").addEventListener("click", (e) => {
-    const target = e.target
+    const target = e.target;
 
-    if (!target.classList.contains("keyboard-button")) {
-        return
-    }
-    let key = target.textContent
+    if (!target.classList.contains("keyboard-button")) return;
 
-    if (key === "Del") {
-        key = "Backspace"
-    } 
+    const key = target.textContent === "Del" ? "Backspace" : target.textContent;
 
-    document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
-})
+    // Focus the current input to ensure proper behavior
+    const row = document.getElementById("userEntryRow");
+    row.children[nextLetter]?.focus();
+
+    document.dispatchEvent(new KeyboardEvent("keyup", { key }));
+});
 
 resetGame();
